@@ -10,17 +10,26 @@ import java.time.Duration;
 public class BasePage {
     static WebDriver driver;
 
-    public static void setDriver(WebDriver wd){
+    public void pause(int time) {
+        try {
+            Thread.sleep(time * 1000L);
+        } catch (InterruptedException e) {
+            throw new RuntimeException(e);
+        }
+    }
+
+    public static void setDriver(WebDriver wd) {
         driver = wd;
     }
 
-    public void clickWait(WebElement element, int time){
+    public void clickWait(WebElement element, int time) {
         new WebDriverWait(driver, Duration.ofSeconds(3))
                 .until(ExpectedConditions
                         .elementToBeClickable(element)).click();
     }
 
-    public boolean validateTextInElementWait(WebElement element, String text, int time){
-        return new WebDriverWait(driver, Duration.ofSeconds(5)).until(ExpectedConditions.textToBePresentInElement(element, text));
+    public boolean validateTextInElementWait(WebElement element, String text, int time) {
+        return new WebDriverWait(driver, Duration.ofSeconds(5)).until(ExpectedConditions
+                .textToBePresentInElement(element, text));
     }
 }

@@ -14,7 +14,7 @@ public class LoginPage extends BasePage{
                 , 10), this);
     }
 
-    @FindBy(id = "username")
+    @FindBy(id = "username-uid1")
     WebElement inputEmail;
     @FindBy(id = "login-submit")
     WebElement btnContinue;

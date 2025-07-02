@@ -22,7 +22,7 @@ public class AppManager {
     public void setup(Method method){
         driver = new ChromeDriver();
         driver.manage().window().maximize();
-        logger.info("Start testing with method " + method.getName());
+        logger.info("Start testing with method  " + method.getName());
     }
 
 
