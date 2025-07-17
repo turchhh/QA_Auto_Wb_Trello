@@ -9,7 +9,7 @@ import java.time.Duration;
 
 public class BasePage {
     static WebDriver driver;
-
+//chrome
     public void pause(int time) {
         try {
             Thread.sleep(time * 1000L);
