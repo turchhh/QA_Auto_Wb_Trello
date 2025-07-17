@@ -30,12 +30,12 @@ public class BoardsPage extends BasePage {
     @FindBy(xpath = "//span[text()='Manage account']")
     WebElement btnManageAccount;
 
-    @FindBy(xpath = "//span[@class='QMKgZFIlTLiEJN']")
+    @FindBy(xpath = "//span[@class='VmbXKMJLSqfD0U']")
     WebElement popUpMessageBoardDelete;
 
 
     public boolean validatePopUpMessage(String text) {
-        return validateTextInElementWait(popUpMessageBoardDelete, text, 5);
+        return validateTextInElementWait(popUpMessageBoardDelete, text, 7);
     }
 
     public void openMyAccount() {
@@ -44,7 +44,7 @@ public class BoardsPage extends BasePage {
     }
 
     public boolean validateUrl() {
-        return new WebDriverWait(driver, Duration.ofSeconds(3))
+        return new WebDriverWait(driver, Duration.ofSeconds(5))
                 .until(ExpectedConditions
                         .urlContains("boards"));
     }

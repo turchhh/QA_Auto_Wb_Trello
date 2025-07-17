@@ -19,7 +19,7 @@ public class DeleteBoardTests extends AppManager {
     BoardsPage boardsPage;
     MyBoardPage myBoardPage;
 
-    @BeforeMethod
+    @BeforeMethod(alwaysRun = true)
     public void login(Method method){
         User user = User.builder()
                 .email("valeriya.qa@gmail.com")
@@ -35,11 +35,9 @@ public class DeleteBoardTests extends AppManager {
         boardsPage.createNewBoard(board);
     }
 
-    @Test
+    @Test(groups = {"smoke", "regress"})
     public void deleteBoardPositiveTest(){
         new MyBoardPage(getDriver()).deleteBoard();
         Assert.assertTrue(boardsPage.validatePopUpMessage("Board deleted."));
-
-
     }
 }

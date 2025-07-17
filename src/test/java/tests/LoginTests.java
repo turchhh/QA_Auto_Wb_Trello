@@ -9,7 +9,7 @@ import pages.HomePage;
 import pages.LoginPage;
 
 public class LoginTests extends AppManager {
-    @Test
+    @Test(groups = {"smoke"})
     public void loginPositiveTest(){
         User user = User.builder()
                 .email("valeriya.qa@gmail.com")
